@@ -5,7 +5,12 @@ import PropTypes from 'prop-types'
 export default function ContactList ({contactList, deleting}) {
     return(
         <ul>
-            <ListItem listElements={contactList} deleteItem={deleting}/>
+            {contactList.map(liEl => <ListItem
+            key={liEl.id}
+            id={liEl.id}
+            name={liEl.name}
+            phone={liEl.phone}
+            deleteItem={deleting}/>)}
         </ul>
     )
 }
